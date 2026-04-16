@@ -15,7 +15,7 @@ class Sensor1(SensorBaseClass[UnknownSensor1FrameBase]):
     def parse(self, data: str) -> SensorData[UnknownSensor1FrameBase]:
         lines = [line.rstrip("\n") for line in data.splitlines() if line.strip()]
         if len(lines) < 3:
-            return SensorData(meta=FrameCollectionMeta(frames_per_sec=1), frames=[])
+            return SensorData(meta=FrameCollectionMeta(fps=1), frames=[])
 
         data_start = 3
 
